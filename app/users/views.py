@@ -7,6 +7,11 @@ from .serializers import UserRegisterSerializer, UserProfileSerializer
 
 
 class UserRegisterView(APIView):
+    """
+    post:
+    Регистрация пользователя.
+    Создаёт нового пользователя. Требует username, email, password, full_name, is_agreed_to_terms.
+    """
     permission_classes = [AllowAny]
 
     def post(self, request):
@@ -18,6 +23,11 @@ class UserRegisterView(APIView):
 
 
 class UserLoginView(APIView):
+    """
+    post:
+    Логин пользователя.
+    Аутентификация по username и password. Возвращает сессионный cookie.
+    """
     permission_classes = [AllowAny]
 
     def post(self, request):
@@ -32,6 +42,15 @@ class UserLoginView(APIView):
 
 
 class UserProfileView(APIView):
+    """
+    get:
+    Получить профиль.
+    Возвращает профиль текущего авторизованного пользователя.
+
+    patch:
+    Обновить профиль.
+    Частичное обновление профиля пользователя.
+    """
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
@@ -47,6 +66,15 @@ class UserProfileView(APIView):
 
 
 class UserInterestView(APIView):
+    """
+    post:
+    Добавить интерес.
+    Добавляет категорию в интересы пользователя. Требует category_id.
+
+    delete:
+    Удалить интерес.
+    Удаляет категорию из интересов пользователя. Требует category_id.
+    """
     permission_classes = [IsAuthenticated]
 
     def post(self, request):
@@ -73,6 +101,15 @@ class UserInterestView(APIView):
 
 
 class SavedArticleView(APIView):
+    """
+    post:
+    Сохранить статью.
+    Добавляет статью в сохранённые пользователя. Требует article_id.
+
+    delete:
+    Удалить статью из сохранённых.
+    Удаляет статью из сохранённых пользователя. Требует article_id.
+    """
     permission_classes = [IsAuthenticated]
 
     def post(self, request):

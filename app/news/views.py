@@ -1,15 +1,14 @@
 from rest_framework import generics
-from rest_framework.response import Response
 from .models import News
 from .serializers import NewsDetailSerializer, NewsListSerializer
 
 
-class NewsDetailView(generics.RetrieveAPIView):
-    queryset = News.objects.all()
-    serializer_class = NewsDetailSerializer
-
-
 class NewsListView(generics.ListAPIView):
+    """
+    get:
+    Список новостей.
+    Возвращает список всех новостей. Фильтрация по категории через ?category=1.
+    """
     serializer_class = NewsListSerializer
 
     def get_queryset(self):
@@ -18,3 +17,13 @@ class NewsListView(generics.ListAPIView):
         if category:
             queryset = queryset.filter(category__id=category)
         return queryset
+
+
+class NewsDetailView(generics.RetrieveAPIView):
+    """
+    get:
+    Детальная новость.
+    Возвращает полную информацию об одной новости по ID.
+    """
+    queryset = News.objects.all()
+    serializer_class = NewsDetailSerializer
