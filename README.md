@@ -28,6 +28,15 @@ Frontend
 
 ## Установка
 
+Перед выполнением команд, описанных ниже установи следующее:
+- Python (3.13+) - [https://www.python.org]
+- Node.js (20+) - [https://nodejs.org/en/]
+- Git - для клонирования репозитория
+Совет: 
+Когда все скачаешь проверь установилось ли оно с помощью команд pyton --version и node -v
+В командной строке должны выйти именно те версии, которые ты скачивал
+
+Backend:
 ```bash
 git clone https://github.com/Nurbol46/news.git
 cd news
@@ -38,6 +47,15 @@ cp .env.example .env
 python manage.py migrate
 python manage.py runserver
 ```
+
+Frontend:
+```bash
+cd frontend # Это переход в папку с фронтом
+npm install # Это установит все зависимости
+npm run dev # Эта команда запустить фронт
+```
+Совет:
+Лучше в VSCode открой два терминала, на одном запусти backend а на другом fronend
 
 ## Переменные окружения
 

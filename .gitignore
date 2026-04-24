@@ -6,18 +6,18 @@ __pycache__/
 
 # Virtual environment
 venv/
-env/
+# env/ для доступа к бд
 .venv/
 
 # Django
 *.log
-db.sqlite3
-media/
+# db.sqlite3 убрал чтобы база полностью была скопирована
+# media/
 staticfiles/
 static/
 
 # Environment
-.env
+# .env для доступа к бд
 
 # IDE
 .vscode/
