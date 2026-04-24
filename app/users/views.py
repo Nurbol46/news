@@ -4,7 +4,8 @@ from rest_framework.permissions import AllowAny, IsAuthenticated
 from django.contrib.auth import authenticate
 from .models import User, UserInterest, SavedArticle
 from .serializers import UserRegisterSerializer, UserProfileSerializer
-
+# Это относится к токенам
+from rest_framework.authtoken.models import Token
 
 class UserRegisterView(APIView):
     """
@@ -21,13 +22,8 @@ class UserRegisterView(APIView):
             return Response({'id': user.id, 'username': user.username}, status=201)
         return Response(serializer.errors, status=400)
 
-
+# изменил класс для работы с токенами
 class UserLoginView(APIView):
-    """
-    post:
-    Логин пользователя.
-    Аутентификация по username и password. Возвращает сессионный cookie.
-    """
     permission_classes = [AllowAny]
 
     def post(self, request):
@@ -35,11 +31,9 @@ class UserLoginView(APIView):
         password = request.data.get('password')
         user = authenticate(username=username, password=password)
         if user:
-            from django.contrib.auth import login
-            login(request, user)
-            return Response({'detail': 'OK'})
-        return Response({'error': 'Неверные данные'}, status=401)
-
+            token, _ = Token.objects.get_or_create(user=user)
+            return Response({'token': token.key}) # Ключ должен называться 'token' малелькими буквами!
+        return Response({'error': 'Invalid credentials'}, status=401)
 
 class UserProfileView(APIView):
     """

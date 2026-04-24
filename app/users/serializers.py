@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from .models import User, UserInterest, SavedArticle
+from app.categories.serializers import CategorySerializer
 
 class UserLoginSerializer(serializers.ModelSerializer):
     class Meta:
@@ -18,9 +19,12 @@ class UserRegisterSerializer(serializers.ModelSerializer):
 
 
 class UserInterestSerializer(serializers.ModelSerializer):
+    interest_id = serializers.ReadOnlyField(source='interest.id')
+    interest_name = serializers.ReadOnlyField(source='interest.name')
+
     class Meta:
         model = UserInterest
-        fields = ['interest']
+        fields = ['interest_id', 'interest_name']
 
 
 class SavedArticleSerializer(serializers.ModelSerializer):
