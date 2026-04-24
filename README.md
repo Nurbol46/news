@@ -17,6 +17,7 @@ Frontend
 - React.js 19.2.5
 - TypeScript 6.0.3
 - Vite
+- HTML / CSS
 
 ## Документация API
 
