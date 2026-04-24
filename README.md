@@ -3,6 +3,7 @@
 REST API для новостного портала «The Modern Curator» на Django REST Framework.
 
 ## Стек
+Backend
 - Python 3.13
 - Django 6.0
 - Django REST Framework
@@ -10,6 +11,12 @@ REST API для новостного портала «The Modern Curator» на 
 - Pillow
 - django-cors-headers
 - drf-yasg
+
+Frontend
+- Node.js 25.9.0
+- React.js 19.2.5
+- TypeScript 6.0.3
+- Vite
 
 ## Документация API
 
