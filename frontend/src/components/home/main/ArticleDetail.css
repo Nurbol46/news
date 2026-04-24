@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600&display=swap');
+
+.article-page {
+    margin-top: 60px;
+  background-color: #ffffff;
+  min-height: 100vh;
+  color: #1a1a1a;
+  font-family: 'Inter', sans-serif;
+}
+
+.article-nav {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px 0;
+}
+
+.back-link {
+  background: none;
+  border: none;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  cursor: pointer;
+  color: #888;
+  transition: 0.3s;
+}
+
+.back-link:hover {
+  color: #000;
+}
+
+.article-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px 100px;
+}
+
+.category-badge {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  padding: 4px 10px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.article-main-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  line-height: 1.1;
+  font-weight: 900;
+  margin-bottom: 30px;
+}
+
+.article-author-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 50px;
+}
+
+.author-avatar {
+  width: 48px;
+  height: 48px;
+  background: #f0f0f0;
+  border-radius: 50%;
+}
+
+.author-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.author-name-text {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.publish-date {
+  font-size: 13px;
+  color: #888;
+}
+
+.article-figure {
+  margin: 0 -100px 50px;
+}
+
+.article-hero-img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+figcaption {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #999;
+  text-align: center;
+}
+
+.article-body {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.article-lead {
+  font-size: 22px;
+  line-height: 1.6;
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+
+.article-text p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #222;
+  margin-bottom: 25px;
+}
+
+.article-end-mark {
+  text-align: center;
+  margin-top: 60px;
+  color: #ccc;
+  letter-spacing: 10px;
+}
+
+.article-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.article-card {
+    padding: 10px;
+  height: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid #eee;
+}
+
+.article-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  border-color: #000;
+}
+
+.read-arrow {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.article-card:hover .read-arrow {
+  transform: translateX(5px);
+}
